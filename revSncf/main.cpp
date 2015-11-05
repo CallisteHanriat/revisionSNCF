@@ -8,6 +8,7 @@
 #include <cstdlib>
 #include "NombreContraint.h"
 #include "Trajet.h"
+#include "Tarif.h"
 
 using namespace std;
 
@@ -41,11 +42,24 @@ void testTrajet() {
     cin >> t;
     cout << "ok.\n";
 }
+
+void testTarif() {
+    string lib = "illico";
+    float price = 0.2;
+    cout << "Constructeur : " << endl;
+    Tarif t (lib, price);
+    cout << "ok.\n";
+    cout << "Affichage : \n";
+    cout << t << endl;
+    cout << "Saisie :\n";
+    cin >> t;
+    cout << endl << t;
+}
 /*
  * 
  */
 int main(int argc, char** argv) {
-    testTrajet();
+    testTarif();
     return EXIT_SUCCESS;
 }
 

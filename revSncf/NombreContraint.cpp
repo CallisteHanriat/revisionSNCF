@@ -30,6 +30,7 @@ template<class T>
 void NombreContraint<T>::setVal(T val) {
     if (val >= getMax() || val <= getMin()) {
         cout << "Erreur du setval. Valeur pas dans l'intervalle.\n";
+        cout << "valeur en question : " << val << endl;
         throw "Error";
     }
     this->m_val = val;
