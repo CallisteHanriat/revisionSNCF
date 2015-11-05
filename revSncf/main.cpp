@@ -7,6 +7,7 @@
 
 #include <cstdlib>
 #include "NombreContraint.h"
+#include "Trajet.h"
 
 using namespace std;
 
@@ -26,11 +27,25 @@ void testNombreContraint() {
     }
     cout << "\nok.\n";
 }
+
+void testTrajet() {
+    string va = "Paris";
+    string vd = "Marseille";
+    cout << "Constructeur : " << endl;
+    Trajet t(vd, va, 650);
+    cout << "ok.\n";
+    cout <<  "Affichage : \n";
+    cout << t;
+    cout << "ok.\n";
+    cout << "saisie : \n";
+    cin >> t;
+    cout << "ok.\n";
+}
 /*
  * 
  */
 int main(int argc, char** argv) {
-    testNombreContraint();
+    testTrajet();
     return EXIT_SUCCESS;
 }
 

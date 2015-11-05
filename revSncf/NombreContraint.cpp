@@ -6,6 +6,8 @@
  */
 
 
+
+
 #ifdef NOMBRECONTRAINT_H
 
 /**
@@ -26,6 +28,10 @@ NombreContraint<T>::NombreContraint(T valeur, T min, T max)
 
 template<class T>
 void NombreContraint<T>::setVal(T val) {
+    if (val >= getMax() || val <= getMin()) {
+        cout << "Erreur du setval. Valeur pas dans l'intervalle.\n";
+        throw "Error";
+    }
     this->m_val = val;
 }
 
