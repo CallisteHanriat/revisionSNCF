@@ -9,6 +9,7 @@
 #include "NombreContraint.h"
 #include "Trajet.h"
 #include "Tarif.h"
+#include "Client.h"
 #include "Billet.h"
 #include "Promotion.h"
 #include "BilletReduit.h"
@@ -126,11 +127,23 @@ void testBilletReduit() {
     BilletReduit billetReduit(trajet, tarif, promotion);
     cout << billetReduit;
 }
+
+void testClient()  {
+    string nm = "maxime";
+    cout << "Constructeur : \n";
+    Client c(nm);
+    cout << "Affichage : \n";
+    cout << c;
+    cout << "\nsaisie : \n";
+    cin >> c;
+    cout << "Affichage : \n";
+    cout << c;
+}
 /*
  * 
  */
 int main(int argc, char** argv) {
-    testBilletReduit();
+    testClient();
     return EXIT_SUCCESS;
 }
 

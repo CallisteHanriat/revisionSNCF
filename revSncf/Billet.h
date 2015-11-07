@@ -8,6 +8,7 @@
 #ifndef BILLET_H
 #define	BILLET_H
 #include "Tarif.h"
+#include "Client.h"
 #include "Trajet.h"
 #include <iostream>
 
