@@ -9,6 +9,7 @@
 #include "NombreContraint.h"
 #include "Trajet.h"
 #include "Tarif.h"
+#include "Billet.h"
 
 using namespace std;
 
@@ -55,11 +56,34 @@ void testTarif() {
     cin >> t;
     cout << endl << t;
 }
+
+void testBillet() {
+    string villeDep = "Paris";
+    string villeAr = "Marseille";
+    int distance = 550;
+    string lib = "illico";
+    float price = 0.2;
+    
+    cout << "Constructeurs : " << endl;
+    Tarif tarif (lib, price);
+    Trajet trajet(villeDep,villeAr, distance);
+    cout << "ok.\n";
+    cout << "Affichage du tarif: \n";
+    cout << tarif << endl;
+    cout << "Affichage du trajet : \n";
+    cout << trajet << endl;
+    
+    cout << "Constructeur du billet : \n";
+    Billet billet(trajet, tarif);
+    cout << "ok.\n";
+    cout << "Affichage du billet : " << endl;
+    cout << billet << endl;
+}
 /*
  * 
  */
 int main(int argc, char** argv) {
-    testTarif();
+    testBillet();
     return EXIT_SUCCESS;
 }
 

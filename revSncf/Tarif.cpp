@@ -53,12 +53,12 @@ void Tarif::saisir(istream &cin) {
     
 }
 
-void Tarif::afficher(ostream &cout) {
-    cout << "libelle : " << getLibelle() << endl;
-    cout << "prix au kilometre :  " << getPrixAuKm();
+void Tarif::afficher(ostream &cout) const {
+    cout << "libelle : " << this->getLibelle() << endl;
+    cout << "prix au kilometre :  " << this->getPrixAuKm();
 }
 
-std::ostream& operator<<(std::ostream& flux, Tarif & t) {
+std::ostream& operator<<(std::ostream& flux, const Tarif & t) {
 	t.afficher(flux);
 	return flux;
 }

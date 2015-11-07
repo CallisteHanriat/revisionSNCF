@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Billet.o \
 	${OBJECTDIR}/NombreContraint.o \
 	${OBJECTDIR}/Tarif.o \
 	${OBJECTDIR}/Trajet.o \
@@ -64,6 +65,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/revsncf: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/revsncf ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/Billet.o: Billet.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Billet.o Billet.cpp
 
 ${OBJECTDIR}/NombreContraint.o: NombreContraint.cpp 
 	${MKDIR} -p ${OBJECTDIR}

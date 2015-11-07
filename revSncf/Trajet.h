@@ -48,7 +48,7 @@ private :
 };
 
 
-std::ostream& operator<<(std::ostream& flux, Trajet & t);
+std::ostream& operator<<(std::ostream& flux, const Trajet & t);
 std::istream& operator>>(std::istream& flux, Trajet & t);
 
 

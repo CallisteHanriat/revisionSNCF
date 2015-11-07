@@ -28,7 +28,7 @@ public :
 
 	void saisir(istream &cin = cin);
 
-	void afficher(ostream &cout = cout);
+	void afficher(ostream &cout = cout) const;
 
 private :
         const static float PRIXMIN;
@@ -40,7 +40,7 @@ private :
 
 };
 
-std::ostream& operator<<(std::ostream& flux, Tarif & t);
+std::ostream& operator<<(std::ostream& flux, const Tarif & t);
 std::istream& operator>>(std::istream& flux, Tarif & t);
 
 

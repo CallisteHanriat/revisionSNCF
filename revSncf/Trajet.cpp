@@ -82,7 +82,7 @@ void Trajet::afficher(ostream &cout) const
 }
 
 
-std::ostream& operator<<(std::ostream& flux, Trajet & t) {
+std::ostream& operator<<(std::ostream& flux, const Trajet & t) {
 	t.afficher(flux);
 	return flux;
 }
