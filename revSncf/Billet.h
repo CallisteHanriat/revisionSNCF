@@ -24,6 +24,7 @@ public :
 
 	void afficher(ostream &cout = cout) const ;
         
+        float getPrix() const;
         
 
 private :

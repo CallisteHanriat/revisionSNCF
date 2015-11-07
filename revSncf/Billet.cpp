@@ -20,19 +20,20 @@ const Tarif& Billet::getTarif() const {
 
 }
 
-
-
 const Trajet& Billet::getTrajet() const {
 
 	return trajet;
 
 }
 
-
-
 void Billet::afficher(ostream &cout) const{
     cout << "Trajet : \n" << getTrajet() << endl;
-    cout << "Tarif : \n" << getTarif();
+    cout << "Tarif : \n" << getTarif()<< endl;
+    cout << "Prix : " << getPrix() << "€";
+}
+
+float Billet::getPrix() const {
+    return getTarif().getPrixAuKm()*getTrajet().getDistance();
 }
 
 std::ostream& operator<<(std::ostream& flux, const Billet & b) {
