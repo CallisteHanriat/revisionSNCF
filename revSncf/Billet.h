@@ -18,13 +18,13 @@ public :
 
 	Billet(Trajet &unTrajet, Tarif &unTarif);
 
-	const Tarif &getTarif() const;
+	virtual const Tarif &getTarif() const;
 
-	const Trajet &getTrajet() const;
+	virtual const Trajet &getTrajet() const;
 
-	void afficher(ostream &cout = cout) const ;
+	virtual void afficher(ostream &cout = cout) const ;
         
-        float getPrix() const;
+        virtual float getPrix() const;
         
 
 private :

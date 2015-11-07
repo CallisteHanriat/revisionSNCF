@@ -11,6 +11,7 @@
 #include "Tarif.h"
 #include "Billet.h"
 #include "Promotion.h"
+#include "BilletReduit.h"
 using namespace std;
 
 void testNombreContraint() {
@@ -95,11 +96,41 @@ void testPromotion() {
     cout << "nouvel affichage de p : \n";
     cout << p;
 }
+
+void testBilletReduit() {
+    string villeDep = "Paris";
+    string villeAr = "Marseille";
+    int distance = 550;
+    string promoLib = "illico_jeunes_mensuel";
+    float promo=0.75;
+    string lib = "illico";
+    float price = 0.2;
+    
+    Promotion promotion(promoLib, promo);
+    cout << "Constructeurs : " << endl;
+    Tarif tarif (lib, price);
+    Trajet trajet(villeDep,villeAr, distance);
+    cout << "ok.\n";
+    cout << "Affichage du tarif: \n";
+    cout << tarif << endl;
+    cout << "Affichage du trajet : \n";
+    cout << trajet << endl;
+    
+    cout << "Constructeur du billet : \n";
+    Billet billet(trajet, tarif);
+    cout << "ok.\n";
+    cout << "Affichage du billet Reduit : " << endl;
+    cout << billet << endl;
+    
+    cout << "AFFICHAGE DU BILLET REDUIT : " << endl;
+    BilletReduit billetReduit(trajet, tarif, promotion);
+    cout << billetReduit;
+}
 /*
  * 
  */
 int main(int argc, char** argv) {
-    testPromotion();
+    testBilletReduit();
     return EXIT_SUCCESS;
 }
 
