@@ -10,7 +10,7 @@
 #include "Trajet.h"
 #include "Tarif.h"
 #include "Billet.h"
-
+#include "Promotion.h"
 using namespace std;
 
 void testNombreContraint() {
@@ -79,11 +79,27 @@ void testBillet() {
     cout << "Affichage du billet : " << endl;
     cout << billet << endl;
 }
+
+
+void testPromotion() {
+    string lib = "illico_jeunes_mensuel";
+    float tauxReduc = 0.75;
+    cout << "Constructeur : \n";
+    Promotion p(lib, tauxReduc);
+    cout << "ok.\n";
+    cout << "affichage de p : \n";
+    cout << p;
+    cout << "ok.\n";
+    cout << "saisie de p : ";
+    cin >> p;
+    cout << "nouvel affichage de p : \n";
+    cout << p;
+}
 /*
  * 
  */
 int main(int argc, char** argv) {
-    testBillet();
+    testPromotion();
     return EXIT_SUCCESS;
 }
 
