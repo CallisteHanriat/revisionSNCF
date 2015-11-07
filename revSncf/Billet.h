@@ -13,26 +13,27 @@
 #include <iostream>
 
 using namespace std;
-class  Billet   { 
 
-public : 
+class Billet {
+public:
 
-	Billet(Trajet &unTrajet, Tarif &unTarif);
+    Billet(Trajet &unTrajet, Tarif &unTarif, Client &cl);
 
-	virtual const Tarif &getTarif() const;
+    virtual const Tarif &getTarif() const;
+    virtual void setClient(Client &cl);
+    virtual Client &getClient() const;
+    virtual const Trajet &getTrajet() const;
 
-	virtual const Trajet &getTrajet() const;
+    virtual void afficher(ostream &cout = cout) const;
 
-	virtual void afficher(ostream &cout = cout) const ;
-        
-        virtual float getPrix() const;
-        
+    virtual float getPrix() const;
 
-private :
 
-	const Tarif& tarif;
+private:
 
-	const Trajet& trajet;
+    const Tarif& tarif;
+    Client &client;
+    const Trajet& trajet;
 
 
 };

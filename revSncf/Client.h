@@ -10,18 +10,19 @@
 
 #include <iostream>
 using namespace std;
-class  Client   { 
-public : 
 
-	Client(string &nom);
-	string getNom() const;
-	void setNom(string &nom);
+class Client {
+public:
+
+    Client(string &nom);
+    string getNom() const;
+    void setNom(string &nom);
 
 
-	void saisir(istream &cin = cin);
-	void afficher(ostream &cout = cout) const;
-private :
-	string nom;
+    void saisir(istream &cin = cin);
+    void afficher(ostream &cout = cout) const;
+private:
+    string nom;
 
 };
 

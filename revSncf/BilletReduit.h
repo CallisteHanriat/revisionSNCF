@@ -9,17 +9,16 @@
 #define	BILLETREDUIT_H
 #include "Billet.h"
 #include "Promotion.h"
-class  BilletReduit : public Billet
-{ 
-public : 
 
-	BilletReduit(Trajet &unTrajet, Tarif &unTarif, Promotion &p);
-	Promotion &getPromotion() const;
-        void afficher(ostream &cout = cout) const;
-	float getPrix() const;
-private :
-	Promotion &promotion;
+class BilletReduit : public Billet {
+public:
 
+    BilletReduit(Trajet &unTrajet, Tarif &unTarif,Client &cl,  Promotion &p);
+    Promotion &getPromotion() const;
+    void afficher(ostream &cout = cout) const;
+    float getPrix() const;
+private:
+    Promotion &promotion;
 };
 
 std::ostream& operator<<(std::ostream& flux, const BilletReduit & b);

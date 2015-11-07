@@ -61,10 +61,12 @@ void testTarif() {
 
 void testBillet() {
     string villeDep = "Paris";
+    string nomClient = "Bruno";
     string villeAr = "Marseille";
     int distance = 550;
     string lib = "illico";
     float price = 0.2;
+    Client cl (nomClient);
     
     cout << "Constructeurs : " << endl;
     Tarif tarif (lib, price);
@@ -76,7 +78,7 @@ void testBillet() {
     cout << trajet << endl;
     
     cout << "Constructeur du billet : \n";
-    Billet billet(trajet, tarif);
+    Billet billet(trajet, tarif, cl);
     cout << "ok.\n";
     cout << "Affichage du billet : " << endl;
     cout << billet << endl;
@@ -102,11 +104,13 @@ void testBilletReduit() {
     string villeDep = "Paris";
     string villeAr = "Marseille";
     int distance = 550;
+    string nomClient = "Maxime";
     string promoLib = "illico_jeunes_mensuel";
     float promo=0.75;
     string lib = "illico";
     float price = 0.2;
     
+    Client cl(nomClient);
     Promotion promotion(promoLib, promo);
     cout << "Constructeurs : " << endl;
     Tarif tarif (lib, price);
@@ -118,13 +122,13 @@ void testBilletReduit() {
     cout << trajet << endl;
     
     cout << "Constructeur du billet : \n";
-    Billet billet(trajet, tarif);
+    Billet billet(trajet, tarif, cl);
     cout << "ok.\n";
     cout << "Affichage du billet Reduit : " << endl;
     cout << billet << endl;
     
     cout << "AFFICHAGE DU BILLET REDUIT : " << endl;
-    BilletReduit billetReduit(trajet, tarif, promotion);
+    BilletReduit billetReduit(trajet, tarif,cl,  promotion);
     cout << billetReduit;
 }
 
@@ -143,7 +147,7 @@ void testClient()  {
  * 
  */
 int main(int argc, char** argv) {
-    testClient();
+    testBilletReduit();
     return EXIT_SUCCESS;
 }
 
