@@ -9,9 +9,14 @@
 #include "Billet.h"
 
 //constructor
-
+/**
+ * 
+ * @param unTrajet le trajet 
+ * @param unTarif le tarif
+ * @param cl le client
+ */
 Billet::Billet(Trajet &unTrajet, Tarif &unTarif, Client &cl)
-: trajet(unTrajet), tarif(unTarif), client(cl) {
+: trajet(unTrajet), tarif(unTarif), Produit(cl) {
 }
 
 const Tarif& Billet::getTarif() const {
@@ -26,19 +31,12 @@ const Trajet& Billet::getTrajet() const {
 
 }
 
-void Billet::setClient(Client& cl) {
-    string nm = cl.getNom();
-    client.setNom(nm);
-}
-Client & Billet::getClient() const {
-    return this->client;
-}
 
 void Billet::afficher(ostream &cout) const {
+    Produit::afficher(cout);
     cout << "Trajet : \n" << getTrajet() << endl;
     cout << "Tarif : \n" << getTarif() << endl;
     cout << "Prix : " << getPrix() << "€\n";
-    cout << getClient();
 }
 
 float Billet::getPrix() const {

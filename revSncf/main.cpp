@@ -12,6 +12,7 @@
 #include "Client.h"
 #include "Billet.h"
 #include "Promotion.h"
+#include "Produit.h"
 #include "Conteneur.h"
 #include "BilletReduit.h"
 using namespace std;
@@ -159,28 +160,28 @@ void testConteneur() {
     string villeAr = "Marseille";
     int distance = 550;
     Trajet tra(villeDep, villeAr, distance);
-    Client cli (nom);
+    Client cli(nom);
 
     int choix;
     do {
         cout << "\t1 - creer des tarifs\n\t2- - creer des trajets\n\t3 - creer des promotions\n\t4 - creer des Clients\n\t5 - creer des billets reduits ou billets en choissisant ses composants\n\t0 - quitter\n";
         cin >> choix;
-        switch(choix) {
-            case 1: 
+        switch (choix) {
+            case 1:
             {
-                Tarif* t = new Tarif(illico,0.2);
+                Tarif* t = new Tarif(illico, 0.2);
                 cin>>*t;
                 contTari->ajouter(*t);
                 break;
             }
-            case 2 :
+            case 2:
             {
                 Trajet* tr = new Trajet(villeDep, villeAr, 100);
                 cin>>*tr;
                 contTraj->ajouter(*tr);
                 break;
             }
-            case 3 : 
+            case 3:
             {
                 string promo = "promo";
                 Promotion* p = new Promotion(promo, 10.0);
@@ -194,21 +195,21 @@ void testConteneur() {
                 contClient->ajouter(*cli);
                 break;
             }
-            case 5 :   
+            case 5:
             {
                 Trajet* tr = new Trajet(villeDep, villeAr, 100);
                 cin>>*tr;
-                Tarif* t = new Tarif(illico,0.2);
-                cin>>*t;    
+                Tarif* t = new Tarif(illico, 0.2);
+                cin>>*t;
                 Client* cli = new Client(nom);
                 Billet bill(*tr, *t, *cli);
                 contBillet->ajouter(bill);
                 break;
             }
         }
-    } while (choix != 0 && choix < 5 );
+    } while (choix != 0 && choix < 5);
 
-    cout << *contTraj;    
+    cout << *contTraj;
 
     delete contBillet;
     delete contClient;
@@ -217,11 +218,36 @@ void testConteneur() {
     delete contTraj;
 }
 
+void testComposite() {
+    //pattern singleton : le getInstance nous assure qu'il y a une seule instance de chaque conteneur.
+    Conteneur<Produit>* contProduit = Conteneur<Produit>::getInstance();
+
+    string nom = "romain";
+    string illico = "jeunes";
+    string lib = "illico";
+    Tarif t(illico, 0.2);
+    string villeDep = "Paris";
+    string villeAr = "Marseille";
+    int distance = 550;
+    Trajet tra(villeDep, villeAr, distance);
+    Client cli(nom);
+    Promotion p(lib, 0.50);
+    
+    Billet b(tra, t, cli);
+    BilletReduit br(tra, t, cli, p);
+    contProduit->ajouter(b);
+    contProduit->ajouter(br);
+    cout << *contProduit;
+
+    delete contProduit;
+
+}
+
 /*
  * 
  */
 int main(int argc, char** argv) {
-    testConteneur();
+    testComposite();
     return EXIT_SUCCESS;
 }
 

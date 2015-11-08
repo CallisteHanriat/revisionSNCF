@@ -10,32 +10,25 @@
 #include "Tarif.h"
 #include "Client.h"
 #include "Trajet.h"
+#include "Produit.h"
 #include <iostream>
 
 using namespace std;
 
-class Billet {
+class Billet : public Produit {
 public:
 
     Billet(Trajet &unTrajet, Tarif &unTarif, Client &cl);
 
     virtual const Tarif &getTarif() const;
-    virtual void setClient(Client &cl);
-    virtual Client &getClient() const;
     virtual const Trajet &getTrajet() const;
-
     virtual void afficher(ostream &cout = cout) const;
-
     virtual float getPrix() const;
 
 
 private:
-
     const Tarif& tarif;
-    Client &client;
     const Trajet& trajet;
-
-
 };
 
 std::ostream& operator<<(std::ostream& flux, const Billet & b);

@@ -9,6 +9,7 @@
       <itemPath>Client.h</itemPath>
       <itemPath>Conteneur.h</itemPath>
       <itemPath>NombreContraint.h</itemPath>
+      <itemPath>Produit.h</itemPath>
       <itemPath>Promotion.h</itemPath>
       <itemPath>Tarif.h</itemPath>
       <itemPath>Trajet.h</itemPath>
@@ -25,6 +26,7 @@
       <itemPath>Client.cpp</itemPath>
       <itemPath>Conteneur.cpp</itemPath>
       <itemPath>NombreContraint.cpp</itemPath>
+      <itemPath>Produit.cpp</itemPath>
       <itemPath>Promotion.cpp</itemPath>
       <itemPath>Tarif.cpp</itemPath>
       <itemPath>Trajet.cpp</itemPath>
@@ -74,6 +76,10 @@
       <item path="NombreContraint.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="NombreContraint.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Produit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Produit.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Promotion.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -129,6 +135,10 @@
       <item path="NombreContraint.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="NombreContraint.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Produit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Produit.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Promotion.cpp" ex="false" tool="1" flavor2="0">
       </item>

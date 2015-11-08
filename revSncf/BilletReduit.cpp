@@ -17,7 +17,7 @@ Promotion &BilletReduit::getPromotion() const {
 void BilletReduit::afficher(ostream& cout) const {
     cout << "Type : BilletReduit\n";
     cout << "Type de réduction : " << getPromotion().getLibelle() << endl;
-    Billet::afficher();
+    Billet::afficher(cout);
 }
 
 float BilletReduit::getPrix() const {
