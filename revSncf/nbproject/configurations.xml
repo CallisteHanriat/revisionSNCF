@@ -11,6 +11,7 @@
       <itemPath>NombreContraint.h</itemPath>
       <itemPath>Produit.h</itemPath>
       <itemPath>Promotion.h</itemPath>
+      <itemPath>Reservation.h</itemPath>
       <itemPath>Tarif.h</itemPath>
       <itemPath>Trajet.h</itemPath>
     </logicalFolder>
@@ -28,6 +29,7 @@
       <itemPath>NombreContraint.cpp</itemPath>
       <itemPath>Produit.cpp</itemPath>
       <itemPath>Promotion.cpp</itemPath>
+      <itemPath>Reservation.cpp</itemPath>
       <itemPath>Tarif.cpp</itemPath>
       <itemPath>Trajet.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -84,6 +86,10 @@
       <item path="Promotion.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Promotion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Reservation.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Reservation.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Tarif.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -143,6 +149,10 @@
       <item path="Promotion.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Promotion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Reservation.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Reservation.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Tarif.cpp" ex="false" tool="1" flavor2="0">
       </item>

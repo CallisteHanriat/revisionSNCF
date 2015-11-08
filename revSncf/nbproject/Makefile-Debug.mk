@@ -42,6 +42,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/NombreContraint.o \
 	${OBJECTDIR}/Produit.o \
 	${OBJECTDIR}/Promotion.o \
+	${OBJECTDIR}/Reservation.o \
 	${OBJECTDIR}/Tarif.o \
 	${OBJECTDIR}/Trajet.o \
 	${OBJECTDIR}/main.o
@@ -105,6 +106,11 @@ ${OBJECTDIR}/Promotion.o: Promotion.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Promotion.o Promotion.cpp
+
+${OBJECTDIR}/Reservation.o: Reservation.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Reservation.o Reservation.cpp
 
 ${OBJECTDIR}/Tarif.o: Tarif.cpp 
 	${MKDIR} -p ${OBJECTDIR}

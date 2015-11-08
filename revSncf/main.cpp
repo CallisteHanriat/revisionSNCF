@@ -14,6 +14,7 @@
 #include "Promotion.h"
 #include "Produit.h"
 #include "Conteneur.h"
+#include "Reservation.h"
 #include "BilletReduit.h"
 using namespace std;
 
@@ -232,11 +233,13 @@ void testComposite() {
     Trajet tra(villeDep, villeAr, distance);
     Client cli(nom);
     Promotion p(lib, 0.50);
-    
     Billet b(tra, t, cli);
     BilletReduit br(tra, t, cli, p);
+    Reservation r(cli, 150.0);
+    
     contProduit->ajouter(b);
     contProduit->ajouter(br);
+    contProduit->ajouter(r);
     cout << *contProduit;
 
     delete contProduit;
